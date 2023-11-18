@@ -15,9 +15,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: azure/docker-login@v1
         with:
-           login-server: ${{ secrets.ACR_ENDPOINT }}
-           username: ${{ secrets.ACR_USERNAME }}
-           password: ${{ secrets.ACR_PASSWORD }}
+           login-server: ehkcontainer.azurecr.io
+           username: ehkContainer
+           password: XoAmr5iYf2L4eag+ZS70li5ZFSqxAJrCR7C+8T04Uf+ACRBBrf7I
       - run: |
-          docker build . -t ${{ secrets.ACR_ENDPOINT }}/knowledgefactory:${{ github.sha }}
-          docker push ${{ secrets.ACR_ENDPOINT }}/knowledgefactory:${{ github.sha }}
+          docker build . -t ehkcontainer.azurecr.io/knowledgefactory:${{ github.sha }}
+          docker push ehkcontainer.azurecr.io/knowledgefactory:${{ github.sha }}
